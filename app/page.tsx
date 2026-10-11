@@ -3,77 +3,77 @@ import React, { useState, useEffect, useRef } from 'react';
 
 // Iconos SVG nativos actualizados y seguros
 const Icons = {
-  Menu: ({ size = 24, className = "" }) => (
+  Menu: ({ size = 24, className = "" }: { size?: number; className?: string }) => (
     <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
       <line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/>
     </svg>
   ),
-  X: ({ size = 24, className = "" }) => (
+  X: ({ size = 24, className = "" }: { size?: number; className?: string }) => (
     <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
       <path d="M18 6 6 18"/><path d="m6 6 12 12"/>
     </svg>
   ),
-  ArrowRight: ({ size = 24, className = "" }) => (
+  ArrowRight: ({ size = 24, className = "" }: { size?: number; className?: string }) => (
     <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
       <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
     </svg>
   ),
-  MapPin: ({ size = 24, className = "" }) => (
+  MapPin: ({ size = 24, className = "" }: { size?: number; className?: string }) => (
     <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
       <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/>
     </svg>
   ),
-  ShieldCheck: ({ size = 24, className = "" }) => (
+  ShieldCheck: ({ size = 24, className = "" }: { size?: number; className?: string }) => (
     <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
       <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2-1 4-2 8-2 2 1 6 2 8 2a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/>
     </svg>
   ),
-  CheckCircle2: ({ size = 24, className = "" }) => (
+  CheckCircle2: ({ size = 24, className = "" }: { size?: number; className?: string }) => (
     <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
       <circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/>
     </svg>
   ),
-  CreditCard: ({ size = 24, className = "" }) => (
+  CreditCard: ({ size = 24, className = "" }: { size?: number; className?: string }) => (
     <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
       <rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/>
     </svg>
   ),
-  Sparkles: ({ size = 24, className = "" }) => (
+  Sparkles: ({ size = 24, className = "" }: { size?: number; className?: string }) => (
     <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
       <path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/>
     </svg>
   ),
-  Droplet: ({ size = 24, className = "" }) => (
+  Droplet: ({ size = 24, className = "" }: { size?: number; className?: string }) => (
     <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
       <path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/>
     </svg>
   ),
-  Focus: ({ size = 24, className = "" }) => (
+  Focus: ({ size = 24, className = "" }: { size?: number; className?: string }) => (
     <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
       <circle cx="12" cy="12" r="3"/><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/>
     </svg>
   ),
-  Aperture: ({ size = 24, className = "" }) => (
+  Aperture: ({ size = 24, className = "" }: { size?: number; className?: string }) => (
     <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
       <circle cx="12" cy="12" r="10"/><path d="m14.31 8 5.74 9.94"/><path d="M9.69 8h11.48"/><path d="m7.38 12 5.74-9.94"/><path d="M9.69 16 3.95 6.06"/><path d="M14.31 16H2.83"/><path d="m16.62 12-5.74 9.94"/>
     </svg>
   ),
-  MessageCircle: ({ size = 24, className = "" }) => (
+  MessageCircle: ({ size = 24, className = "" }: { size?: number; className?: string }) => (
     <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
       <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/>
     </svg>
   ),
-  Video: ({ size = 24, className = "" }) => (
+  Video: ({ size = 24, className = "" }: { size?: number; className?: string }) => (
     <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
       <path d="m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.87a.5.5 0 0 0-.752-.432L16 10.5"/><rect x="2" y="6" width="14" height="12" rx="2"/>
     </svg>
   ),
-  Star: ({ size = 24, className = "" }) => (
+  Star: ({ size = 24, className = "" }: { size?: number; className?: string }) => (
     <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
       <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
     </svg>
   ),
-  ChevronDown: ({ size = 24, className = "" }) => (
+  ChevronDown: ({ size = 24, className = "" }: { size?: number; className?: string }) => (
     <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
       <path d="m6 9 6 6 6-6"/>
     </svg>
@@ -731,7 +731,7 @@ const BookingFlow = () => {
                   <Icons.CheckCircle2 size={40} />
                 </div>
                 <h3 className="text-3xl font-serif text-white mb-3">¡Abono Exitoso!</h3>
-                <p className="text-[#a1a1aa] text-sm mb-10 font-light">Tu pago has sido procesado. Por favor, envía el comprobante al WhatsApp del estudio.</p>
+                <p className="text-[#a1a1aa] text-sm mb-10 font-light">Tu pago ha sido procesado. Por favor, envía el comprobante al WhatsApp del estudio.</p>
                 <button onClick={() => { setStep(1); setPaymentSuccess(false); window.open("https://wa.me/573176817316", "_blank"); }} className="btn-primary px-8 py-3 rounded-full text-sm font-medium">Ir a WhatsApp</button>
               </div>
             )}
